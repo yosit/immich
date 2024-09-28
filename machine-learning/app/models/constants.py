@@ -63,7 +63,7 @@ _INSIGHTFACE_MODELS = {
 }
 
 
-SUPPORTED_PROVIDERS = ["CUDAExecutionProvider", "OpenVINOExecutionProvider", "CPUExecutionProvider"]
+SUPPORTED_PROVIDERS = ["CoreMLExecutionProvider", "CUDAExecutionProvider", "OpenVINOExecutionProvider", "CPUExecutionProvider"]
 
 
 def get_model_source(model_name: str) -> ModelSource | None:

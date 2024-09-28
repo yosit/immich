@@ -1,6 +1,7 @@
 import asyncio
 import gc
 import os
+import sys
 import signal
 import threading
 import time
@@ -149,6 +150,9 @@ async def predict(
         inputs = text
     else:
         raise HTTPException(400, "Either image or text must be provided")
+    
+    log.info(f"Predict called with: {entries} image: {sys.getsizeof(image)} text: {text}")
+
     response = await run_inference(inputs, entries)
     return ORJSONResponse(response)
 
